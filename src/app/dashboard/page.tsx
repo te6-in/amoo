@@ -1,5 +1,7 @@
-import { LogoutButton } from "@/components/auth/LogoutButton";
 import { createServerClient } from "@/libs/supabase/server";
+
+import { Profile } from "@/components/profile/Profile";
+
 import { redirect } from "next/navigation";
 
 export default async function DashboardPage() {
@@ -15,8 +17,7 @@ export default async function DashboardPage() {
 
   return (
     <div>
-      <h1>{user.email}</h1>
-      <LogoutButton />
+      <Profile user={user} />
     </div>
   );
 }
