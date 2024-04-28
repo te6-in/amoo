@@ -23,6 +23,9 @@ importers:
       '@te6/ui':
         specifier: ^0.1.2
         version: 0.1.2(@babel/core@7.24.4)(@swc/helpers@0.5.5)(@types/node@20.12.7)(@types/react@18.3.1)(typescript@5.4.5)
+      lucide-react:
+        specifier: ^0.376.0
+        version: 0.376.0(react@18.2.0)
       next:
         specifier: ^14.2.1
         version: 14.2.3(@babel/core@7.24.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -2215,6 +2218,11 @@ packages:
 
   lucide-react@0.314.0:
     resolution: {integrity: sha512-c2zOW7TOyKxPCaSs1og2lFdoI3SR4iii3yrZJU2Zpdc78nOw4fUmrcFNultaCiwZcr4CyiKdzjMdvKNlBBk+UQ==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+
+  lucide-react@0.376.0:
+    resolution: {integrity: sha512-g91IX3ERD6yUR1TL2dsL4BkcGygpZz/EsqjAeL/kcRQV0EApIOr/9eBfKhYOVyQIcGGuotFGjF3xKLHMEz+b7g==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
 
@@ -5827,6 +5835,10 @@ snapshots:
       yallist: 4.0.0
 
   lucide-react@0.314.0(react@18.2.0):
+    dependencies:
+      react: 18.2.0
+
+  lucide-react@0.376.0(react@18.2.0):
     dependencies:
       react: 18.2.0
 

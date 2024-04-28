@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@te6/ui";
+import { Github } from "lucide-react";
 import { withBase, withQuery } from "ufo";
 
 import { env } from "@/env";
@@ -25,5 +26,5 @@ export function LoginButton({ redirectTo }: LoginButtonProps) {
     });
   };
 
-  return <Button onClick={login} text="GitHub로 로그인" />;
+  return <Button onClick={login} text="GitHub로 로그인" icon={Github} />;
 }

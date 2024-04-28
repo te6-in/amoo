@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@te6/ui";
+import { LogOut } from "lucide-react";
 
 import { createBrowserClient } from "@/libs/supabase/browser";
 
@@ -20,5 +21,5 @@ export function LogoutButton({ redirectTo }: LogoutButtonProps) {
     router.push(redirectTo ?? "/auth");
   };
 
-  return <Button onClick={logout} text="로그아웃" />;
+  return <Button onClick={logout} text="로그아웃" icon={LogOut} />;
 }

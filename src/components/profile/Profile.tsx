@@ -23,7 +23,7 @@ export function Profile({ user }: ProfileProps) {
           alt={`${username}님의 프로필 사진`}
         />
         <div className="flex flex-col">
-          <div className="font-bold text-lg text-neutral-950 dark:text-neutral-50 text-center">
+          <div className="font-bold line-clamp-1 text-lg text-neutral-950 dark:text-neutral-50 text-center">
             {username}
           </div>
           <div className="font-medium text-sm text-neutral-600 dark:text-neutral-400 text-center">
