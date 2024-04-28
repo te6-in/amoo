@@ -1,7 +1,9 @@
+import { withBase, withQuery } from "ufo";
+
 import { env } from "@/env";
 import { createServerClient } from "@/libs/supabase/server";
-import { NextResponse, type NextRequest } from "next/server";
-import { withBase, withQuery } from "ufo";
+
+import { type NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);

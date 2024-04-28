@@ -1,9 +1,10 @@
 "use client";
 
-import { createBrowserClient } from "@/libs/supabase/browser";
 import { Button } from "@te6/ui";
-import { env } from "@/env";
 import { withBase, withQuery } from "ufo";
+
+import { env } from "@/env";
+import { createBrowserClient } from "@/libs/supabase/browser";
 
 interface LoginButtonProps {
   redirectTo?: string;

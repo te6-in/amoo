@@ -1,7 +1,9 @@
 "use client";
 
-import { createBrowserClient } from "@/libs/supabase/browser";
 import { Button } from "@te6/ui";
+
+import { createBrowserClient } from "@/libs/supabase/browser";
+
 import { useRouter } from "next/navigation";
 
 interface LogoutButtonProps {

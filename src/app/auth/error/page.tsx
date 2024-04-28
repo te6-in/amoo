@@ -1,7 +1,8 @@
 import { createServerClient } from "@/libs/supabase/server";
-import { redirect } from "next/navigation";
 
 import { LoginButton } from "@/components/auth/LoginButton";
+
+import { redirect } from "next/navigation";
 
 interface ErrorPageProps {
   searchParams: {
