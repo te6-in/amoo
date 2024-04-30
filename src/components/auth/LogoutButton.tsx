@@ -1,9 +1,10 @@
 "use client";
 
-import { Button } from "@te6/ui";
 import { LogOut } from "lucide-react";
 
 import { createBrowserClient } from "@/libs/supabase/browser";
+
+import { Button } from "@/components/ui/Button";
 
 import { useRouter } from "next/navigation";
 

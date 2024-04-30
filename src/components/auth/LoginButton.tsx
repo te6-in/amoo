@@ -1,11 +1,12 @@
 "use client";
 
-import { Button } from "@te6/ui";
 import { Github } from "lucide-react";
 import { withBase, withQuery } from "ufo";
 
 import { env } from "@/env";
 import { createBrowserClient } from "@/libs/supabase/browser";
+
+import { Button } from "@/components/ui/Button";
 
 interface LoginButtonProps {
   redirectTo?: string;
