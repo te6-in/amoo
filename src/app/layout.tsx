@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import "@/styles/globals.css";
 
+import { QueryProvider } from "@/components/QueryProvider";
+
 import type { PropsWithChildren } from "react";
 
 export const metadata: Metadata = {
@@ -14,7 +16,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="ko-KR">
       <body>
-        <main>{children}</main>
+        <QueryProvider>
+          <main>{children}</main>
+        </QueryProvider>
       </body>
     </html>
   );
