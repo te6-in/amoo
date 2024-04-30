@@ -20,8 +20,8 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const client = createServerClient();
-  const { error } = await client.auth.exchangeCodeForSession(code);
+  const supabase = createServerClient();
+  const { error } = await supabase.auth.exchangeCodeForSession(code);
 
   if (error) {
     return NextResponse.redirect(

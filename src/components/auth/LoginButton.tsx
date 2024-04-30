@@ -19,7 +19,7 @@ export function LoginButton({ redirectTo }: LoginButtonProps) {
       provider: "github",
       options: {
         redirectTo: withBase(
-          withQuery("/auth/callback", { redirectTo }),
+          withQuery("/api/auth/callback", { redirectTo }),
           env.NEXT_PUBLIC_SITE_URL,
         ),
       },
