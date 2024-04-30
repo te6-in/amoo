@@ -13,11 +13,11 @@ interface LogoutButtonProps {
 }
 
 export function LogoutButton({ redirectTo }: LogoutButtonProps) {
-  const client = createBrowserClient();
+  const supabase = createBrowserClient();
   const router = useRouter();
 
   const logout = async () => {
-    await client.auth.signOut();
+    await supabase.auth.signOut();
 
     router.push(redirectTo ?? "/auth");
   };

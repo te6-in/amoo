@@ -13,10 +13,10 @@ interface LoginButtonProps {
 }
 
 export function LoginButton({ redirectTo }: LoginButtonProps) {
-  const client = createBrowserClient();
+  const supabase = createBrowserClient();
 
   const login = async () => {
-    await client.auth.signInWithOAuth({
+    await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
         redirectTo: withBase(

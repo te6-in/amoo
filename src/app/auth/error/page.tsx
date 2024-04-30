@@ -11,11 +11,11 @@ interface ErrorPageProps {
 }
 
 export default async function ErrorPage({ searchParams }: ErrorPageProps) {
-  const client = createServerClient();
+  const supabase = createServerClient();
 
   const {
     data: { user },
-  } = await client.auth.getUser();
+  } = await supabase.auth.getUser();
 
   if (user) {
     redirect(searchParams.redirectTo ?? "/dashboard");

@@ -5,11 +5,11 @@ import { Profile } from "@/components/profile/Profile";
 import { redirect } from "next/navigation";
 
 export default async function DashboardPage() {
-  const client = createServerClient();
+  const supabase = createServerClient();
 
   const {
     data: { user },
-  } = await client.auth.getUser();
+  } = await supabase.auth.getUser();
 
   if (!user) {
     redirect("/auth");
