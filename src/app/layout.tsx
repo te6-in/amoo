@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="ko-KR">
-      <body>
+      <body className="bg-body dark:bg-body-dark">
         <QueryProvider>
           <main>{children}</main>
         </QueryProvider>
