@@ -1,6 +1,6 @@
 import { createServerClient } from "@/libs/supabase/server";
 
-import { LoginButton } from "@/components/auth/LoginButton";
+import { GitHubAuthButton } from "@/components/auth/GitHubAuthButton";
 
 import { redirect } from "next/navigation";
 
@@ -24,7 +24,7 @@ export default async function ErrorPage({ searchParams }: ErrorPageProps) {
   return (
     <div>
       <div>에러 페이지, redirectTo: {searchParams.redirectTo ?? "없음"}</div>
-      <LoginButton redirectTo={searchParams.redirectTo} />
+      <GitHubAuthButton redirectTo={searchParams.redirectTo} />
     </div>
   );
 }

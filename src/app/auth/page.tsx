@@ -1,6 +1,6 @@
 import { createServerClient } from "@/libs/supabase/server";
 
-import { LoginButton } from "@/components/auth/LoginButton";
+import { GitHubAuthButton } from "@/components/auth/GitHubAuthButton";
 
 import { redirect } from "next/navigation";
 
@@ -15,5 +15,10 @@ export default async function AuthPage() {
     redirect("/dashboard");
   }
 
-  return <LoginButton />;
+  return (
+    <div className="max-w-64">
+      <GitHubAuthButton />
+      <GitHubAuthButton />
+    </div>
+  );
 }

@@ -8,14 +8,14 @@ import { createBrowserClient } from "@/libs/supabase/browser";
 
 import { Button } from "@/components/ui/Button";
 
-interface LoginButtonProps {
+interface GitHubAuthButtonProps {
   redirectTo?: string;
 }
 
-export function LoginButton({ redirectTo }: LoginButtonProps) {
+export function GitHubAuthButton({ redirectTo }: GitHubAuthButtonProps) {
   const supabase = createBrowserClient();
 
-  const login = async () => {
+  const auth = async () => {
     await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
@@ -27,5 +27,5 @@ export function LoginButton({ redirectTo }: LoginButtonProps) {
     });
   };
 
-  return <Button onClick={login} text="GitHub로 로그인" icon={Github} />;
+  return <Button onClick={auth} text="GitHub로 로그인" icon={Github} />;
 }
