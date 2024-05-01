@@ -24,8 +24,8 @@ importers:
         specifier: ^5.32.0
         version: 5.32.0(react@18.2.0)
       '@te6/ui':
-        specifier: ^0.1.2
-        version: 0.1.2(@babel/core@7.24.4)(@swc/helpers@0.5.5)(@types/node@20.12.7)(@types/react@18.3.1)(typescript@5.4.5)
+        specifier: ^0.1.5
+        version: 0.1.5(@babel/core@7.24.4)(@swc/helpers@0.5.5)(@types/node@20.12.7)(@types/react@18.3.1)(typescript@5.4.5)
       axios:
         specifier: ^1.6.8
         version: 1.6.8
@@ -861,8 +861,8 @@ packages:
     peerDependencies:
       react: ^18.0.0
 
-  '@te6/ui@0.1.2':
-    resolution: {integrity: sha512-kqHLEcwN2RXFzn7rDbE2X/PJHhpSxwDYbBly0oqSUNji5ECtw8wPDLE/yv9Uwer+hp5F8uevF16mFbjyi+rSyg==}
+  '@te6/ui@0.1.5':
+    resolution: {integrity: sha512-eWigAwGW31WH4wDhF0SdwGasFyBEyjdFqGln2z7GAhtDPWrFjtTtpdhF8mFBx6TG4UeADxH+Eo3CmxmWpDPtOQ==}
 
   '@trivago/prettier-plugin-sort-imports@4.3.0':
     resolution: {integrity: sha512-r3n0onD3BTOVUNPhR4lhVK4/pABGpbA7bW3eumZnYdKaHkf1qEC+Mag6DPbGNuuh0eG8AaYj+YqmVHSiGslaTQ==}
@@ -4182,7 +4182,7 @@ snapshots:
       '@tanstack/query-core': 5.32.0
       react: 18.2.0
 
-  '@te6/ui@0.1.2(@babel/core@7.24.4)(@swc/helpers@0.5.5)(@types/node@20.12.7)(@types/react@18.3.1)(typescript@5.4.5)':
+  '@te6/ui@0.1.5(@babel/core@7.24.4)(@swc/helpers@0.5.5)(@types/node@20.12.7)(@types/react@18.3.1)(typescript@5.4.5)':
     dependencies:
       '@ladle/react': 4.0.3(@swc/helpers@0.5.5)(@types/node@20.12.7)(@types/react@18.3.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.4.5)
       framer-motion: 10.18.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
