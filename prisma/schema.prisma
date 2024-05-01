@@ -298,7 +298,7 @@ model post {
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model user {
   id                   String    @id @db.Uuid
-  username             String
+  username             String?
   role                 role      @default(member)
   is_subscribed        Boolean   @default(false)
   is_subscribed_to_ads Boolean   @default(false)
