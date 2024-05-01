@@ -93,7 +93,6 @@ export async function setUsername({
     revalidatePath(redirectTo || "/dashboard", "layout");
     redirect(redirectTo || "/dashboard");
   } catch (error) {
-    // FIXME: handle better
-    console.log(error);
+    return { error, status: 500 };
   }
 }
