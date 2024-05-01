@@ -23,7 +23,10 @@ const setSubscriptionStatus = async (status: boolean) => {
   try {
     await prisma.user.update({
       where: { id: user.id },
-      data: { is_subscribed: status },
+      data: {
+        is_subscribed: status,
+        ...(status && { last_subscribed_at: new Date() }),
+      },
     });
 
     return NextResponse.json<SubscribePostResponse>({ ok: true });
