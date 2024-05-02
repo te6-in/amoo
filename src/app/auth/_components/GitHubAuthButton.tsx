@@ -27,7 +27,7 @@ export function GitHubAuthButton({ redirectTo }: GitHubAuthButtonProps) {
       provider: "github",
       options: {
         redirectTo: withBase(
-          withQuery("/auth/callback", { redirectTo, provider: "github" }),
+          withQuery("/auth/confirm", { redirectTo }),
           env.NEXT_PUBLIC_SITE_URL,
         ),
       },
