@@ -20,7 +20,7 @@ export interface OtpFormValues {
   otp: string;
 }
 
-export default function OtpForm({ email, redirectTo }: OtpFormProps) {
+export function OtpForm({ email, redirectTo }: OtpFormProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   const {

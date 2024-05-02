@@ -22,7 +22,7 @@ export interface UsernameFormValues {
   name: string;
 }
 
-export default function UsernameForm({ redirectTo }: UsernameFormProps) {
+export function UsernameForm({ redirectTo }: UsernameFormProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   const {

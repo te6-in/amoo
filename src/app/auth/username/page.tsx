@@ -3,7 +3,7 @@ import { withQuery } from "ufo";
 import { createServerClient } from "@/libs/supabase/server";
 import { prisma } from "@/server/db";
 
-import UsernameForm from "@/app/auth/_components/UsernameForm";
+import { UsernameForm } from "@/app/auth/_components/UsernameForm";
 
 import { redirect } from "next/navigation";
 
