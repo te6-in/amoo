@@ -1,4 +1,4 @@
-import type { EmailOtpType, Provider } from "@supabase/supabase-js";
+import type { EmailOtpType } from "@supabase/supabase-js";
 import { withBase, withQuery } from "ufo";
 
 import { env } from "@/env";

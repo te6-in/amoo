@@ -1,8 +1,10 @@
 "use client";
 
-import { useForm } from "react-hook-form";
+import { type UseFormGetValues, useForm } from "react-hook-form";
 
-import { auth } from "@/app/auth/actions";
+import { emailAuth } from "@/app/auth/actions";
+
+import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
 
 import { Button } from "@/components/Button";
 import { TextInput } from "@/components/TextInput";
@@ -13,13 +15,14 @@ import { useState } from "react";
 
 interface EmailAuthFormProps {
   redirectTo?: string;
+  getValues: UseFormGetValues<SubscribeFormValues>;
 }
 
 export interface EmailAuthFormValues {
   email: string;
 }
 
-export function EmailAuthForm({ redirectTo }: EmailAuthFormProps) {
+export function EmailAuthForm({ redirectTo, getValues }: EmailAuthFormProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -32,7 +35,11 @@ export function EmailAuthForm({ redirectTo }: EmailAuthFormProps) {
   const onValid = async (data: EmailAuthFormValues) => {
     setIsLoading(true);
 
-    await auth({ formData: data, redirectTo });
+    await emailAuth({
+      formData: data,
+      subscribeFormData: getValues(),
+      redirectTo,
+    });
   };
 
   const trimmedEmail =

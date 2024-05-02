@@ -1,9 +1,12 @@
 "use client";
 
+import type { UseFormGetValues } from "react-hook-form";
 import { withBase, withQuery } from "ufo";
 
 import { env } from "@/env";
 import { createBrowserClient } from "@/libs/supabase/browser";
+
+import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
 
 import { Button } from "@/components/Button";
 
@@ -13,9 +16,13 @@ import { useState } from "react";
 
 interface GitHubAuthButtonProps {
   redirectTo?: string;
+  getValues: UseFormGetValues<SubscribeFormValues>;
 }
 
-export function GitHubAuthButton({ redirectTo }: GitHubAuthButtonProps) {
+export function GitHubAuthButton({
+  redirectTo,
+  getValues,
+}: GitHubAuthButtonProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   const supabase = createBrowserClient();
@@ -27,7 +34,11 @@ export function GitHubAuthButton({ redirectTo }: GitHubAuthButtonProps) {
       provider: "github",
       options: {
         redirectTo: withBase(
-          withQuery("/auth/confirm", { redirectTo }),
+          withQuery("/auth/confirm", {
+            redirectTo,
+            subscribe: getValues("subscribe"),
+            subscribeToAds: getValues("subscribeToAds"),
+          }),
           env.NEXT_PUBLIC_SITE_URL,
         ),
       },

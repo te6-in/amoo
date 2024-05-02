@@ -3,7 +3,7 @@ import type { User } from "@supabase/supabase-js";
 import { getReadableRole } from "@/libs/ui";
 import { prisma } from "@/server/db";
 
-import { LogoutButton } from "@/app/auth/_components/LogoutButton";
+import { LogoutButton } from "@/app/dashboard/_components/LogoutButton";
 import { ManageSubscriptionButton } from "@/app/dashboard/_components/ManageSubscriptionButton";
 import { SubscribeButton } from "@/app/dashboard/_components/SubscribeButton";
 

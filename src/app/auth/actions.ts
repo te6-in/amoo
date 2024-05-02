@@ -2,13 +2,13 @@
 
 import { withQuery } from "ufo";
 
+import type { EmailAuthFormValues } from "@/app/auth/_components/AuthForm/EmailAuthForm";
+import type { OtpFormValues } from "@/app/auth/_components/OtpForm";
+import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
+import type { UsernameFormValues } from "@/app/auth/_components/UsernameForm";
 import { env } from "@/env";
 import { createServerClient } from "@/libs/supabase/server";
 import { prisma } from "@/server/db";
-
-import type { EmailAuthFormValues } from "@/app/auth/_components/EmailAuthForm";
-import type { OtpFormValues } from "@/app/auth/_components/OtpForm";
-import type { UsernameFormValues } from "@/app/auth/_components/UsernameForm";
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
