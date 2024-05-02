@@ -1,10 +1,10 @@
 "use client";
 
-import { LogOut } from "lucide-react";
-
 import { createBrowserClient } from "@/libs/supabase/browser";
 
 import { Button } from "@/components/Button";
+
+import { LogOut } from "lucide-react";
 
 import { useRouter } from "next/navigation";
 

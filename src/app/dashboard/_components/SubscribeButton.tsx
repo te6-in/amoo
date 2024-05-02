@@ -1,10 +1,10 @@
 "use client";
 
-import { MailCheck, MailPlus } from "lucide-react";
-
 import { setSubscriptionStatus } from "@/app/dashboard/actions";
 
 import { Button } from "@/components/Button";
+
+import { MailCheck, MailPlus } from "lucide-react";
 
 import { type ReactElement, useState } from "react";
 

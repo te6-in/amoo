@@ -1,12 +1,13 @@
 "use client";
 
-import { Github } from "lucide-react";
 import { withBase, withQuery } from "ufo";
 
 import { env } from "@/env";
 import { createBrowserClient } from "@/libs/supabase/browser";
 
 import { Button } from "@/components/Button";
+
+import { Github } from "lucide-react";
 
 import { useState } from "react";
 

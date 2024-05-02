@@ -1,6 +1,7 @@
+import { createServerClient } from "@/libs/supabase/server";
+
 import { EmailAuthForm } from "@/app/auth/_components/EmailAuthForm";
 import { GitHubAuthButton } from "@/app/auth/_components/GitHubAuthButton";
-import { createServerClient } from "@/libs/supabase/server";
 
 import { DividerWithLabel } from "@/components/DividerWithLabel";
 

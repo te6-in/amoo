@@ -1,6 +1,5 @@
 "use client";
 
-import { Check } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 import { setUsername } from "@/app/auth/actions";
@@ -8,6 +7,8 @@ import { setUsername } from "@/app/auth/actions";
 import { Button } from "@/components/Button";
 import { DividerWithLabel } from "@/components/DividerWithLabel";
 import { TextInput } from "@/components/TextInput";
+
+import { Check } from "lucide-react";
 
 import { useState } from "react";
 

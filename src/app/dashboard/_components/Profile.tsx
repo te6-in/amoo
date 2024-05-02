@@ -1,11 +1,13 @@
 import type { User } from "@supabase/supabase-js";
-import { UserIcon } from "lucide-react";
+
+import { getReadableRole } from "@/libs/ui";
+import { prisma } from "@/server/db";
 
 import { LogoutButton } from "@/app/auth/_components/LogoutButton";
 import { ManageSubscriptionButton } from "@/app/dashboard/_components/ManageSubscriptionButton";
 import { SubscribeButton } from "@/app/dashboard/_components/SubscribeButton";
-import { getReadableRole } from "@/libs/ui";
-import { prisma } from "@/server/db";
+
+import { UserIcon } from "lucide-react";
 
 import Image from "next/image";
 

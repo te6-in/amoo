@@ -1,12 +1,13 @@
 "use client";
 
-import { Mail } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 import { auth } from "@/app/auth/actions";
 
 import { Button } from "@/components/Button";
 import { TextInput } from "@/components/TextInput";
+
+import { Mail } from "lucide-react";
 
 import { useState } from "react";
 

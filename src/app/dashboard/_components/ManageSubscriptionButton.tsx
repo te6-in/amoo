@@ -1,8 +1,8 @@
 "use client";
 
-import { Settings } from "lucide-react";
-
 import { Button } from "@/components/Button";
+
+import { Settings } from "lucide-react";
 
 export function ManageSubscriptionButton() {
   return (

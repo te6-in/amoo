@@ -1,5 +1,6 @@
-import { Profile } from "@/app/dashboard/_components/Profile";
 import { createServerClient } from "@/libs/supabase/server";
+
+import { Profile } from "@/app/dashboard/_components/Profile";
 
 import { redirect } from "next/navigation";
 

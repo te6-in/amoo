@@ -1,12 +1,13 @@
 "use client";
 
-import { Check } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 import { checkOtp } from "@/app/auth/actions";
 
 import { Button } from "@/components/Button";
 import { TextInput } from "@/components/TextInput";
+
+import { Check } from "lucide-react";
 
 import { useState } from "react";
 
