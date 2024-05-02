@@ -15,7 +15,9 @@ interface UsernameFormProps {
 }
 
 export interface UsernameFormValues {
-  username: string;
+  // use `name` to indicate `username`
+  // for password managers not to autofill the field
+  name: string;
 }
 
 export default function UsernameForm({ redirectTo }: UsernameFormProps) {
@@ -35,37 +37,35 @@ export default function UsernameForm({ redirectTo }: UsernameFormProps) {
   };
 
   const trimmedUsername =
-    watch("username") === undefined ? "" : watch("username").trim();
+    watch("name") === undefined ? "" : watch("name").trim();
 
   return (
     <div className="flex flex-col gap-4">
       <form onSubmit={handleSubmit(onValid)} className="flex flex-col gap-2">
         <TextInput
-          name="username"
+          name="name"
           type="text"
           title="별명"
           placeholder="아무"
           options={{
             required: "별명을 입력해 주세요.",
             disabled: isLoading,
-            validate: (value: UsernameFormValues["username"]) =>
+            validate: (value: UsernameFormValues["name"]) =>
               value.trim() !== "" || "별명을 입력해 주세요.",
           }}
           register={register}
-          error={errors.username?.message}
+          error={errors.name?.message}
         />
-        <Button
-          text={
-            trimmedUsername === ""
-              ? "완료"
-              : `${trimmedUsername}님이라 불러주세요`
-          }
-          type="submit"
-          disabled={!isValid}
-          icon={Check}
-          primary={trimmedUsername !== ""}
-          isLoading={isLoading}
-        />
+        {trimmedUsername !== "" && (
+          <Button
+            text={`${trimmedUsername}님이라 불러주세요`}
+            type="submit"
+            disabled={!isValid}
+            icon={Check}
+            primary={trimmedUsername !== ""}
+            isLoading={isLoading}
+          />
+        )}
       </form>
       <DividerWithLabel />
       <Button text="나중에 설정" href="/dashboard" />

@@ -71,7 +71,7 @@ export async function checkOtp({
 }
 
 export async function setUsername({
-  formData: { username },
+  formData: { name },
   redirectTo,
 }: SetUsernameRequest) {
   const supabase = createServerClient();
@@ -87,7 +87,7 @@ export async function setUsername({
   try {
     await prisma.user.update({
       where: { id: user.id },
-      data: { username },
+      data: { username: name },
     });
 
     revalidatePath(redirectTo || "/dashboard", "layout");
