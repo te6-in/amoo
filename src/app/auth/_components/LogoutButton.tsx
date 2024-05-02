@@ -4,7 +4,7 @@ import { LogOut } from "lucide-react";
 
 import { createBrowserClient } from "@/libs/supabase/browser";
 
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/Button";
 
 import { useRouter } from "next/navigation";
 

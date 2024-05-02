@@ -2,8 +2,9 @@
 
 import { MailCheck, MailPlus } from "lucide-react";
 
-import { setSubscriptionStatus } from "@/components/profile/actions";
-import { Button } from "@/components/ui/Button";
+import { setSubscriptionStatus } from "@/app/dashboard/actions";
+
+import { Button } from "@/components/Button";
 
 import { type ReactElement, useState } from "react";
 

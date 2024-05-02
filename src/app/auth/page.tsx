@@ -1,8 +1,8 @@
+import { EmailAuthForm } from "@/app/auth/_components/EmailAuthForm";
+import { GitHubAuthButton } from "@/app/auth/_components/GitHubAuthButton";
 import { createServerClient } from "@/libs/supabase/server";
 
-import { EmailAuthForm } from "@/components/auth/EmailAuthForm";
-import { GitHubAuthButton } from "@/components/auth/GitHubAuthButton";
-import { DividerWithLabel } from "@/components/ui/DividerWithLabel";
+import { DividerWithLabel } from "@/components/DividerWithLabel";
 
 import { redirect } from "next/navigation";
 

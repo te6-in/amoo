@@ -3,9 +3,10 @@
 import { Check } from "lucide-react";
 import { useForm } from "react-hook-form";
 
-import { checkOtp } from "@/components/auth/actions";
-import { Button } from "@/components/ui/Button";
-import { TextInput } from "@/components/ui/TextInput";
+import { checkOtp } from "@/app/auth/actions";
+
+import { Button } from "@/components/Button";
+import { TextInput } from "@/components/TextInput";
 
 import { useState } from "react";
 

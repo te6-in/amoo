@@ -2,7 +2,7 @@
 
 import { Settings } from "lucide-react";
 
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/Button";
 
 export function ManageSubscriptionButton() {
   return (

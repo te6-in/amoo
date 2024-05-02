@@ -3,10 +3,11 @@
 import { Check } from "lucide-react";
 import { useForm } from "react-hook-form";
 
-import { setUsername } from "@/components/auth/actions";
-import { Button } from "@/components/ui/Button";
-import { DividerWithLabel } from "@/components/ui/DividerWithLabel";
-import { TextInput } from "@/components/ui/TextInput";
+import { setUsername } from "@/app/auth/actions";
+
+import { Button } from "@/components/Button";
+import { DividerWithLabel } from "@/components/DividerWithLabel";
+import { TextInput } from "@/components/TextInput";
 
 import { useState } from "react";
 

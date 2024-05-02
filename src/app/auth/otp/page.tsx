@@ -1,8 +1,7 @@
 import { withQuery } from "ufo";
 
+import OtpForm from "@/app/auth/_components/OtpForm";
 import { createBrowserClient } from "@/libs/supabase/browser";
-
-import OtpForm from "@/components/auth/OtpForm";
 
 import { redirect } from "next/navigation";
 

@@ -6,7 +6,7 @@ import { withBase, withQuery } from "ufo";
 import { env } from "@/env";
 import { createBrowserClient } from "@/libs/supabase/browser";
 
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/Button";
 
 import { useState } from "react";
 
@@ -26,7 +26,7 @@ export function GitHubAuthButton({ redirectTo }: GitHubAuthButtonProps) {
       provider: "github",
       options: {
         redirectTo: withBase(
-          withQuery("/api/auth/callback", { redirectTo }),
+          withQuery("/auth/callback", { redirectTo, provider: "github" }),
           env.NEXT_PUBLIC_SITE_URL,
         ),
       },

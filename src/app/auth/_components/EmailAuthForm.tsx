@@ -3,9 +3,10 @@
 import { Mail } from "lucide-react";
 import { useForm } from "react-hook-form";
 
-import { auth } from "@/components/auth/actions";
-import { Button } from "@/components/ui/Button";
-import { TextInput } from "@/components/ui/TextInput";
+import { auth } from "@/app/auth/actions";
+
+import { Button } from "@/components/Button";
+import { TextInput } from "@/components/TextInput";
 
 import { useState } from "react";
 
