@@ -1,9 +1,6 @@
 import { createServerClient } from "@/libs/supabase/server";
 
-import { EmailAuthForm } from "@/app/auth/_components/EmailAuthForm";
-import { GitHubAuthButton } from "@/app/auth/_components/GitHubAuthButton";
-
-import { DividerWithLabel } from "@/components/DividerWithLabel";
+import { AuthSubscribeForm } from "@/app/auth/_components/AuthSubscribeForm";
 
 import { redirect } from "next/navigation";
 
@@ -25,10 +22,8 @@ export default async function AuthPage({ searchParams }: AuthPageProps) {
   }
 
   return (
-    <div className="max-w-64 flex flex-col gap-4">
-      <EmailAuthForm redirectTo={searchParams.redirectTo} />
-      <DividerWithLabel />
-      <GitHubAuthButton redirectTo={searchParams.redirectTo} />
+    <div className="max-w-80 flex flex-col gap-4">
+      <AuthSubscribeForm />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { withBase, withQuery } from "ufo";
 
 import { env } from "@/env";
 import { createServerClient } from "@/libs/supabase/server";
+import { prisma } from "@/server/db";
 
 import { type NextRequest, NextResponse } from "next/server";
 
@@ -26,10 +27,13 @@ export async function GET(request: NextRequest) {
       ? undefined
       : searchParams.get("redirectTo");
 
+  const subscribe = searchParams.get("subscribe") === "true";
+  const subscribeToAds = searchParams.get("subscribeToAds") === "true";
+
   if (!(code || (tokenHash && type))) {
     return NextResponse.redirect(
       withBase(
-        withQuery("/auth/error", { redirectTo }),
+        withQuery("/auth/error", { redirectTo, subscribe, subscribeToAds }),
         env.NEXT_PUBLIC_SITE_URL,
       ),
     );
@@ -50,7 +54,39 @@ export async function GET(request: NextRequest) {
   if (error) {
     return NextResponse.redirect(
       withBase(
-        withQuery("/auth/error", { redirectTo }),
+        withQuery("/auth/error", { redirectTo, subscribe, subscribeToAds }),
+        env.NEXT_PUBLIC_SITE_URL,
+      ),
+    );
+  }
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    // unreachable
+    return NextResponse.redirect(
+      withBase(
+        withQuery("/auth/error", { redirectTo, subscribe, subscribeToAds }),
+        env.NEXT_PUBLIC_SITE_URL,
+      ),
+    );
+  }
+
+  try {
+    await prisma.user.update({
+      where: { id: user.id },
+      data: {
+        ...(subscribe && { is_subscribed: true }),
+        ...(subscribe && { last_subscribed_at: new Date() }),
+        ...(subscribeToAds && { is_subscribed_to_ads: true }),
+      },
+    });
+  } catch (error) {
+    return NextResponse.redirect(
+      withBase(
+        withQuery("/auth/error", { redirectTo, subscribe, subscribeToAds }),
         env.NEXT_PUBLIC_SITE_URL,
       ),
     );

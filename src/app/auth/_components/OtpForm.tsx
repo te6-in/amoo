@@ -2,7 +2,9 @@
 
 import { useForm } from "react-hook-form";
 
-import { checkOtp } from "@/app/auth/actions";
+import { verifyOtp } from "@/app/auth/actions";
+
+import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
 
 import { Button } from "@/components/Button";
 import { TextInput } from "@/components/TextInput";
@@ -14,13 +16,18 @@ import { useState } from "react";
 interface OtpFormProps {
   email: string;
   redirectTo?: string;
+  subscribeFormData: SubscribeFormValues;
 }
 
 export interface OtpFormValues {
   otp: string;
 }
 
-export function OtpForm({ email, redirectTo }: OtpFormProps) {
+export function OtpForm({
+  email,
+  redirectTo,
+  subscribeFormData,
+}: OtpFormProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -33,7 +40,12 @@ export function OtpForm({ email, redirectTo }: OtpFormProps) {
   const onValid = async (data: OtpFormValues) => {
     setIsLoading(true);
 
-    await checkOtp({ formData: data, email, redirectTo });
+    await verifyOtp({
+      formData: data,
+      subscribeFormData,
+      email,
+      redirectTo,
+    });
   };
 
   const trimmedOtp = watch("otp") === undefined ? "" : watch("otp").trim();
