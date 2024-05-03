@@ -23,7 +23,7 @@ export default async function AuthPage({
   }
 
   return (
-    <div className="max-w-80 flex flex-col gap-4">
+    <div className=" flex max-w-80 flex-col gap-4">
       <AuthSubscribeForm
         redirectTo={
           typeof redirectTo === "string" && redirectTo ? redirectTo : undefined

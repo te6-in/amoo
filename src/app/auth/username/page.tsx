@@ -39,7 +39,7 @@ export default async function UsernamePage({
   }
 
   return (
-    <div className="max-w-64 flex flex-col gap-4">
+    <div className="flex max-w-64 flex-col gap-4">
       <UsernameForm
         redirectTo={
           typeof redirectTo === "string" && redirectTo ? redirectTo : undefined

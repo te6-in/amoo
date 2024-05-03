@@ -39,7 +39,7 @@ export default async function OtpPage({ searchParams }: OtpPageProps) {
   };
 
   return (
-    <div className="max-w-64 flex flex-col gap-4">
+    <div className="flex max-w-64 flex-col gap-4">
       <OtpForm
         email={email}
         redirectTo={

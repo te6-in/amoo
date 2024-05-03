@@ -13,7 +13,7 @@ interface SubscribeFormProps {
 
 export function SubscribeForm({ register }: SubscribeFormProps) {
   return (
-    <div className="p-4 bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-2xl flex flex-col gap-2.5">
+    <div className="flex flex-col gap-2.5 rounded-2xl border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-800 dark:bg-neutral-950">
       <Checkbox
         register={register}
         name="subscribe"
