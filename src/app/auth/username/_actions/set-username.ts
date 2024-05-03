@@ -15,10 +15,15 @@ interface SetUsernameRequest {
   redirectTo?: string;
 }
 
+interface SetUsernameResponse {
+  status: number;
+  error?: Error;
+}
+
 export async function setUsername({
   formData: { name },
   redirectTo,
-}: SetUsernameRequest) {
+}: SetUsernameRequest): Promise<SetUsernameResponse | void> {
   const supabase = createServerClient();
 
   const {
@@ -38,6 +43,9 @@ export async function setUsername({
     revalidatePath(redirectTo || "/dashboard");
     redirect(redirectTo || "/dashboard");
   } catch (error) {
-    return { error, status: 500 };
+    return {
+      status: 500,
+      error: new Error("데이터베이스 업데이트에 실패했습니다."),
+    };
   }
 }

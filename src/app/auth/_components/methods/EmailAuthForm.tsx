@@ -31,11 +31,11 @@ export function EmailAuthForm({ redirectTo, getValues }: EmailAuthFormProps) {
     formState: { errors, isValid },
   } = useForm<EmailAuthFormValues>();
 
-  const onValid = async (data: EmailAuthFormValues) => {
+  const onValid = async (formData: EmailAuthFormValues) => {
     setIsLoading(true);
 
     await emailAuth({
-      formData: data,
+      formData,
       subscribeFormData: getValues
         ? getValues()
         : { subscribe: true, subscribeToAds: true },

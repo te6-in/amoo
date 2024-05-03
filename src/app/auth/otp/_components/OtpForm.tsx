@@ -37,15 +37,10 @@ export function OtpForm({
     formState: { errors, isValid },
   } = useForm<OtpFormValues>();
 
-  const onValid = async (data: OtpFormValues) => {
+  const onValid = async (formData: OtpFormValues) => {
     setIsLoading(true);
 
-    await verifyOtp({
-      formData: data,
-      subscribeFormData,
-      email,
-      redirectTo,
-    });
+    await verifyOtp({ formData, subscribeFormData, email, redirectTo });
   };
 
   const trimmedOtp = watch("otp") === undefined ? "" : watch("otp").trim();

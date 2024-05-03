@@ -33,13 +33,17 @@ export default async function UsernamePage({
   }
 
   if (dbUser.username) {
-    redirect(typeof redirectTo === "string" ? redirectTo : "/dashboard");
+    redirect(
+      typeof redirectTo === "string" && redirectTo ? redirectTo : "/dashboard",
+    );
   }
 
   return (
     <div className="max-w-64 flex flex-col gap-4">
       <UsernameForm
-        redirectTo={typeof redirectTo === "string" ? redirectTo : undefined}
+        redirectTo={
+          typeof redirectTo === "string" && redirectTo ? redirectTo : undefined
+        }
       />
     </div>
   );

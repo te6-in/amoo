@@ -19,7 +19,9 @@ export default async function ErrorPage({
   } = await supabase.auth.getUser();
 
   if (user) {
-    redirect(typeof redirectTo === "string" ? redirectTo : "/dashboard");
+    redirect(
+      typeof redirectTo === "string" && redirectTo ? redirectTo : "/dashboard",
+    );
   }
 
   const defaultValues: SubscribeFormValues | undefined =
@@ -35,7 +37,9 @@ export default async function ErrorPage({
       <div>에러 페이지</div>
       <AuthSubscribeForm
         defaultValues={defaultValues}
-        redirectTo={typeof redirectTo === "string" ? redirectTo : undefined}
+        redirectTo={
+          typeof redirectTo === "string" && redirectTo ? redirectTo : undefined
+        }
       />
     </div>
   );

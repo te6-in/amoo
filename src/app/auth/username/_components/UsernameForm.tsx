@@ -32,10 +32,14 @@ export function UsernameForm({ redirectTo }: UsernameFormProps) {
     formState: { errors, isValid },
   } = useForm<UsernameFormValues>();
 
-  const onValid = async (data: UsernameFormValues) => {
+  const onValid = async (formData: UsernameFormValues) => {
     setIsLoading(true);
 
-    await setUsername({ formData: data, redirectTo });
+    const data = await setUsername({ formData, redirectTo });
+
+    if (data?.error) {
+      // TODO: handle error
+    }
   };
 
   const trimmedUsername =

@@ -17,13 +17,17 @@ export default async function AuthPage({
   } = await supabase.auth.getUser();
 
   if (user) {
-    redirect(typeof redirectTo === "string" ? redirectTo : "/dashboard");
+    redirect(
+      typeof redirectTo === "string" && redirectTo ? redirectTo : "/dashboard",
+    );
   }
 
   return (
     <div className="max-w-80 flex flex-col gap-4">
       <AuthSubscribeForm
-        redirectTo={typeof redirectTo === "string" ? redirectTo : undefined}
+        redirectTo={
+          typeof redirectTo === "string" && redirectTo ? redirectTo : undefined
+        }
       />
     </div>
   );

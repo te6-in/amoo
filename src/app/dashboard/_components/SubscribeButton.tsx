@@ -25,7 +25,7 @@ export function SubscribeButton<T>({
   const onClick = async () => {
     setIsLoading(true);
 
-    const data = await setSubscriptionStatus(true);
+    const data = await setSubscriptionStatus({ status: true });
 
     if (data.status === 200) {
       setIsSuccess(true);

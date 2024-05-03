@@ -26,7 +26,6 @@ export async function GET(request: NextRequest) {
 
   // also filters out empty strings as well as nulls
   if (!(code || (tokenHash && type))) {
-    console.log("empty string");
     return NextResponse.redirect(
       withBase(
         withQuery("/auth/error", { redirectTo, subscribe, subscribeToAds }),
