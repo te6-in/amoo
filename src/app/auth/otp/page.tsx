@@ -1,5 +1,6 @@
 import { withQuery } from "ufo";
 
+import { TRUE_STRING } from "@/libs/constants";
 import { createBrowserClient } from "@/libs/supabase/browser";
 import type { NextAppPage } from "@/types/next";
 
@@ -31,8 +32,8 @@ export default async function OtpPage({ searchParams }: OtpPageProps) {
   }
 
   const subscribeFormData = {
-    subscribe: subscribe === "true",
-    subscribeToAds: subscribeToAds === "true",
+    subscribe: subscribe === TRUE_STRING,
+    subscribeToAds: subscribeToAds === TRUE_STRING,
   };
 
   return (

@@ -1,3 +1,4 @@
+import { TRUE_STRING } from "@/libs/constants";
 import { createServerClient } from "@/libs/supabase/server";
 import type { NextAppPage } from "@/types/next";
 
@@ -24,8 +25,8 @@ export default async function ErrorPage({
   const defaultValues: SubscribeFormValues | undefined =
     subscribe && subscribeToAds
       ? {
-          subscribe: subscribe === "true",
-          subscribeToAds: subscribeToAds === "true",
+          subscribe: subscribe === TRUE_STRING,
+          subscribeToAds: subscribeToAds === TRUE_STRING,
         }
       : undefined;
 

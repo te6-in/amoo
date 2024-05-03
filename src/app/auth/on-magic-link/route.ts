@@ -1,6 +1,7 @@
 import { withBase, withQuery } from "ufo";
 
 import { env } from "@/env";
+import { TRUE_STRING } from "@/libs/constants";
 import { createServerClient } from "@/libs/supabase/server";
 import { prisma } from "@/server/db";
 
@@ -34,9 +35,9 @@ export async function GET(request: NextRequest) {
     await prisma.user.update({
       where: { id: user.id },
       data: {
-        ...(subscribe === "true" && { is_subscribed: true }),
-        ...(subscribe === "true" && { last_subscribed_at: new Date() }),
-        ...(subscribeToAds === "true" && { is_subscribed_to_ads: true }),
+        ...(subscribe === TRUE_STRING && { is_subscribed: true }),
+        ...(subscribe === TRUE_STRING && { last_subscribed_at: new Date() }),
+        ...(subscribeToAds === TRUE_STRING && { is_subscribed_to_ads: true }),
       },
     });
   } catch (error) {
