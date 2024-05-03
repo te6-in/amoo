@@ -1,8 +1,8 @@
 import type { UseFormGetValues } from "react-hook-form";
 
-import { EmailAuthForm } from "@/app/auth/_components/AuthForm/EmailAuthForm";
-import { GitHubAuthButton } from "@/app/auth/_components/AuthForm/GitHubAuthButton";
 import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
+import { EmailAuthForm } from "@/app/auth/_components/methods/EmailAuthForm";
+import { GitHubAuthButton } from "@/app/auth/_components/methods/GitHubAuthButton";
 
 import { DividerWithLabel } from "@/components/DividerWithLabel";
 

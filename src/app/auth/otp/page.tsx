@@ -4,8 +4,8 @@ import { TRUE_STRING } from "@/libs/constants";
 import { createBrowserClient } from "@/libs/supabase/browser";
 import type { NextAppPage } from "@/types/next";
 
-import { OtpForm } from "@/app/auth/_components/OtpForm";
 import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
+import { OtpForm } from "@/app/auth/otp/_components/OtpForm";
 
 import { redirect } from "next/navigation";
 

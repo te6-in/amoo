@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 
-import { setUsername } from "@/app/auth/actions";
+import { setUsername } from "@/app/auth/username/_actions/set-username";
 
 import { Button } from "@/components/Button";
 import { DividerWithLabel } from "@/components/DividerWithLabel";

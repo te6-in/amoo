@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 
-import { verifyOtp } from "@/app/auth/actions";
+import { verifyOtp } from "@/app/auth/otp/_actions/verify-otp";
 
 import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
 

@@ -2,9 +2,8 @@
 
 import { type UseFormGetValues, useForm } from "react-hook-form";
 
-import { emailAuth } from "@/app/auth/actions";
-
 import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
+import { emailAuth } from "@/app/auth/_components/methods/_actions/email-auth";
 
 import { Button } from "@/components/Button";
 import { TextInput } from "@/components/TextInput";

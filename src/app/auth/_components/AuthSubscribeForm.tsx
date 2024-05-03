@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 
-import { AuthForm } from "@/app/auth/_components/AuthForm/AuthForm";
+import { AuthForm } from "@/app/auth/_components/AuthForm";
 import {
   SubscribeForm,
   type SubscribeFormValues,

@@ -1,6 +1,6 @@
 "use client";
 
-import { setSubscriptionStatus } from "@/app/dashboard/actions";
+import { setSubscriptionStatus } from "@/app/dashboard/_actions/set-subscription-status";
 
 import { Button } from "@/components/Button";
 
