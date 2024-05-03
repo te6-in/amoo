@@ -1,29 +1,64 @@
-# Create T3 App
+# 아무 amoo
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## 스티비 탈출을 위한 여정
 
-## What's next? How do I make an app with this?
+- [아무 amoo](https://bit.ly/amoo_team) 뉴스레터를 stibee 밖으로 꺼내고자 하는 시도
+- 발전 가능성이 보인다면 뉴스레터 SaaS가 될 지도
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## 미리보기
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+- [Production](https://amoo.te6.in/)
+- [Preview](https://preview.amoo.te6.in/)
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## 개발 환경
 
-## Learn More
+- Node.js (20.12.0)
+- pnpm (9.0.6)
+- Supabase
+- Vercel
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## 로드맵
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+- [ ] 랜딩
+- [x] 인증
+  - [x] 이메일 OTP
+  - [x] 이메일 Magic Link
+  - [x] GitHub
+- [x] 구독
+- [ ] 아카이브
+  - [ ] 열람
+  - [ ] 댓글
+- [ ] 작성
+  - [ ] 에디터
+    - [ ] 템플릿
+    - [ ] 블록
+    - [ ] 미리보기
+  - [ ] 설문
+  - [ ] 임시 저장
+  - [ ] 발송
+    - [ ] 즉시
+    - [ ] 예약
+- [ ] 회원 대시보드
+  - [ ] 구독 상태 변경
+  - [ ] 정보 변경
+- [ ] 관리자 대시보드
+  - [ ] 뉴스레터
+  - [ ] 구독자
+  - [ ] 통계
+    - [ ] 추이
+      - [ ] 구독자 수
+      - [ ] 발송 수
+      - [ ] 열람 수
+      - [ ] 링크 클릭 수
+    - [ ] 구독자 별
+      - [ ] 열람
+      - [ ] 링크 클릭
+    - [ ] 메일 별
+      - [ ] 열람
+      - [ ] 링크 클릭
+      - [ ] 설문 결과
+      - [ ] 댓글 현황
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## 참고 자료
 
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+- [@te6/ui](https://ui.te6.in/)
