@@ -1,23 +1,22 @@
-import { type QueryObject, withQuery } from "ufo";
+import { withQuery } from "ufo";
 
 import { createBrowserClient } from "@/libs/supabase/browser";
+import type { NextAppPage } from "@/types/next";
 
 import { OtpForm } from "@/app/auth/_components/OtpForm";
 import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
 
 import { redirect } from "next/navigation";
 
-interface OtpPageSearchParams extends SubscribeFormValues, QueryObject {
-  email?: string;
-  redirectTo?: string;
-}
-
-interface OtpPageProps {
-  searchParams: OtpPageSearchParams;
-}
+type OtpPageProps = NextAppPage<
+  "email" | "redirectTo" | keyof SubscribeFormValues
+>;
 
 export default async function OtpPage({ searchParams }: OtpPageProps) {
-  if (!searchParams.email) {
+  const { email, redirectTo, subscribe, subscribeToAds } = searchParams;
+
+  // filters out null, string[], and empty string
+  if (typeof email !== "string" || !email) {
     redirect(withQuery("/auth", searchParams));
   }
 
@@ -28,19 +27,19 @@ export default async function OtpPage({ searchParams }: OtpPageProps) {
   } = await supabase.auth.getUser();
 
   if (user) {
-    redirect(searchParams.redirectTo || "/dashboard");
+    redirect(typeof redirectTo === "string" ? redirectTo : "/dashboard");
   }
 
   const subscribeFormData = {
-    subscribe: searchParams.subscribe,
-    subscribeToAds: searchParams.subscribeToAds,
+    subscribe: subscribe === "true",
+    subscribeToAds: subscribeToAds === "true",
   };
 
   return (
     <div className="max-w-64 flex flex-col gap-4">
       <OtpForm
-        email={searchParams.email}
-        redirectTo={searchParams.redirectTo}
+        email={email}
+        redirectTo={typeof redirectTo === "string" ? redirectTo : undefined}
         subscribeFormData={subscribeFormData}
       />
     </div>

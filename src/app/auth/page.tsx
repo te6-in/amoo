@@ -1,16 +1,15 @@
 import { createServerClient } from "@/libs/supabase/server";
+import type { NextAppPage } from "@/types/next";
 
 import { AuthSubscribeForm } from "@/app/auth/_components/AuthSubscribeForm";
 
 import { redirect } from "next/navigation";
 
-interface AuthPageProps {
-  searchParams: {
-    redirectTo?: string;
-  };
-}
+type AuthPageProps = NextAppPage<"redirectTo">;
 
-export default async function AuthPage({ searchParams }: AuthPageProps) {
+export default async function AuthPage({
+  searchParams: { redirectTo },
+}: AuthPageProps) {
   const supabase = createServerClient();
 
   const {
@@ -18,12 +17,14 @@ export default async function AuthPage({ searchParams }: AuthPageProps) {
   } = await supabase.auth.getUser();
 
   if (user) {
-    redirect(searchParams.redirectTo || "/dashboard");
+    redirect(typeof redirectTo === "string" ? redirectTo : "/dashboard");
   }
 
   return (
     <div className="max-w-80 flex flex-col gap-4">
-      <AuthSubscribeForm />
+      <AuthSubscribeForm
+        redirectTo={typeof redirectTo === "string" ? redirectTo : undefined}
+      />
     </div>
   );
 }

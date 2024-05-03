@@ -15,7 +15,7 @@ import { useState } from "react";
 
 interface EmailAuthFormProps {
   redirectTo?: string;
-  getValues: UseFormGetValues<SubscribeFormValues>;
+  getValues?: UseFormGetValues<SubscribeFormValues>;
 }
 
 export interface EmailAuthFormValues {
@@ -37,7 +37,9 @@ export function EmailAuthForm({ redirectTo, getValues }: EmailAuthFormProps) {
 
     await emailAuth({
       formData: data,
-      subscribeFormData: getValues(),
+      subscribeFormData: getValues
+        ? getValues()
+        : { subscribe: true, subscribeToAds: true },
       redirectTo,
     });
   };

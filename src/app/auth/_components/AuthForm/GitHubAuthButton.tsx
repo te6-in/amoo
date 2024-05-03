@@ -16,7 +16,7 @@ import { useState } from "react";
 
 interface GitHubAuthButtonProps {
   redirectTo?: string;
-  getValues: UseFormGetValues<SubscribeFormValues>;
+  getValues?: UseFormGetValues<SubscribeFormValues>;
 }
 
 export function GitHubAuthButton({
@@ -36,8 +36,8 @@ export function GitHubAuthButton({
         redirectTo: withBase(
           withQuery("/auth/confirm", {
             redirectTo,
-            subscribe: getValues("subscribe"),
-            subscribeToAds: getValues("subscribeToAds"),
+            subscribe: getValues ? getValues("subscribe") : true,
+            subscribeToAds: getValues ? getValues("subscribeToAds") : true,
           }),
           env.NEXT_PUBLIC_SITE_URL,
         ),

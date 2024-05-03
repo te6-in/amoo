@@ -8,7 +8,7 @@ import { DividerWithLabel } from "@/components/DividerWithLabel";
 
 interface AuthFormProps {
   redirectTo?: string;
-  getValues: UseFormGetValues<SubscribeFormValues>;
+  getValues?: UseFormGetValues<SubscribeFormValues>;
 }
 export function AuthForm({ redirectTo, getValues }: AuthFormProps) {
   return (

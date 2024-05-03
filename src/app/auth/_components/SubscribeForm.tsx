@@ -18,13 +18,13 @@ export function SubscribeForm({ register }: SubscribeFormProps) {
         register={register}
         name="subscribe"
         title="아무 뉴스레터 구독"
-        description="아무 내용이나 보내드립니다."
+        description="구독하지 않고 계신 경우 구독하게 됩니다."
       />
       <Checkbox
         register={register}
         name="subscribeToAds"
         title="광고성 정보 수신 동의"
-        description="아무가 광고를 받게 되는 날이 올까요? 이 항목을 체크하시면 그 날을 함께 기념할 수 있습니다."
+        description="광고성 정보를 동의하지 않고 계신 경우 동의하게 됩니다."
       />
     </div>
   );

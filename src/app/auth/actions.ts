@@ -1,6 +1,6 @@
 "use server";
 
-import { withQuery } from "ufo";
+import { withBase, withQuery } from "ufo";
 
 import { env } from "@/env";
 import { createServerClient } from "@/libs/supabase/server";
@@ -39,22 +39,33 @@ export async function emailAuth({
 }: AuthRequest) {
   const supabase = createServerClient();
 
+  // sends an OTP to the email
   const { error } = await supabase.auth.signInWithOtp({
     email,
     options: {
-      emailRedirectTo: `${env.NEXT_PUBLIC_SITE_URL}${redirectTo || "/dashboard"}`,
+      emailRedirectTo: withBase(
+        withQuery("/auth/on-magic-link", {
+          redirectTo,
+          subscribe,
+          subscribeToAds,
+        }),
+        env.NEXT_PUBLIC_SITE_URL,
+      ),
     },
   });
 
   if (error) {
     console.log(error);
+
+    revalidatePath("/auth/error");
     redirect(
       withQuery("/auth/error", { redirectTo, subscribe, subscribeToAds }),
     );
   }
 
-  revalidatePath("/auth/otp", "layout");
+  revalidatePath("/auth/otp");
   redirect(
+    // FIXME: hash email
     withQuery("/auth/otp", { email, redirectTo, subscribe, subscribeToAds }),
   );
 }
@@ -74,7 +85,6 @@ export async function verifyOtp({
   });
 
   if (error) {
-    console.log(error);
     redirect(
       withQuery("/auth/error", { redirectTo, subscribe, subscribeToAds }),
     );
@@ -111,7 +121,7 @@ export async function verifyOtp({
     },
   });
 
-  revalidatePath("/auth/username", "layout");
+  revalidatePath("/auth/username");
   redirect(withQuery("/auth/username", { redirectTo }));
 }
 
@@ -135,7 +145,7 @@ export async function setUsername({
       data: { username: name },
     });
 
-    revalidatePath(redirectTo || "/dashboard", "layout");
+    revalidatePath(redirectTo || "/dashboard");
     redirect(redirectTo || "/dashboard");
   } catch (error) {
     return { error, status: 500 };

@@ -8,9 +8,17 @@ import {
   type SubscribeFormValues,
 } from "@/app/auth/_components/SubscribeForm";
 
-export function AuthSubscribeForm() {
+interface AuthSubscribeFormProps {
+  defaultValues?: SubscribeFormValues;
+  redirectTo?: string;
+}
+
+export function AuthSubscribeForm({
+  defaultValues,
+  redirectTo,
+}: AuthSubscribeFormProps) {
   const { register, getValues } = useForm<SubscribeFormValues>({
-    defaultValues: {
+    defaultValues: defaultValues ?? {
       subscribe: true,
       subscribeToAds: false,
     },
@@ -18,7 +26,7 @@ export function AuthSubscribeForm() {
 
   return (
     <div className="flex flex-col gap-2">
-      <AuthForm getValues={getValues} />
+      <AuthForm getValues={getValues} redirectTo={redirectTo} />
       <SubscribeForm register={register} />
     </div>
   );

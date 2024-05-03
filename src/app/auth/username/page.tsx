@@ -2,19 +2,16 @@ import { withQuery } from "ufo";
 
 import { createServerClient } from "@/libs/supabase/server";
 import { prisma } from "@/server/db";
+import type { NextAppPage } from "@/types/next";
 
 import { UsernameForm } from "@/app/auth/_components/UsernameForm";
 
 import { redirect } from "next/navigation";
 
-interface UsernamePageProps {
-  searchParams: {
-    redirectTo?: string;
-  };
-}
+type UsernamePageProps = NextAppPage<"redirectTo">;
 
 export default async function UsernamePage({
-  searchParams,
+  searchParams: { redirectTo },
 }: UsernamePageProps) {
   const supabase = createServerClient();
 
@@ -23,7 +20,7 @@ export default async function UsernamePage({
   } = await supabase.auth.getUser();
 
   if (!user) {
-    redirect(withQuery("/auth", { redirectTo: searchParams.redirectTo }));
+    redirect(withQuery("/auth", { redirectTo }));
   }
 
   const dbUser = await prisma.user.findUnique({
@@ -32,16 +29,18 @@ export default async function UsernamePage({
 
   if (!dbUser) {
     // unrechable(probably), just for type checking
-    redirect(withQuery("/auth", { redirectTo: searchParams.redirectTo }));
+    redirect(withQuery("/auth", { redirectTo }));
   }
 
   if (dbUser.username) {
-    redirect(searchParams.redirectTo || "/dashboard");
+    redirect(typeof redirectTo === "string" ? redirectTo : "/dashboard");
   }
 
   return (
     <div className="max-w-64 flex flex-col gap-4">
-      <UsernameForm redirectTo={searchParams.redirectTo} />
+      <UsernameForm
+        redirectTo={typeof redirectTo === "string" ? redirectTo : undefined}
+      />
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import type { EmailOtpType } from "@supabase/supabase-js";
 import { withBase, withQuery } from "ufo";
 
 import { env } from "@/env";
@@ -11,60 +10,18 @@ import { type NextRequest, NextResponse } from "next/server";
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
 
-  // for github oauth
-  const code = searchParams.get("code");
-
-  // for magic link
-  const tokenHash = searchParams.get("tokenHash");
-  const type = searchParams.get("type");
-
-  // for redirecting
   const redirectTo = searchParams.get("redirectTo");
+
   const subscribe = searchParams.get("subscribe");
   const subscribeToAds = searchParams.get("subscribeToAds");
 
-  // also filters out empty strings as well as nulls
-  if (!(code || (tokenHash && type))) {
-    console.log("empty string");
-    return NextResponse.redirect(
-      withBase(
-        withQuery("/auth/error", { redirectTo, subscribe, subscribeToAds }),
-        env.NEXT_PUBLIC_SITE_URL,
-      ),
-    );
-  }
-
   const supabase = createServerClient();
-  let error;
-
-  if (code) {
-    error = (await supabase.auth.exchangeCodeForSession(code)).error;
-  }
-
-  if (tokenHash && type) {
-    error = (
-      await supabase.auth.verifyOtp({
-        type: type as EmailOtpType,
-        token_hash: tokenHash,
-      })
-    ).error;
-  }
-
-  if (error) {
-    return NextResponse.redirect(
-      withBase(
-        withQuery("/auth/error", { redirectTo, subscribe, subscribeToAds }),
-        env.NEXT_PUBLIC_SITE_URL,
-      ),
-    );
-  }
 
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
   if (!user) {
-    // unreachable
     return NextResponse.redirect(
       withBase(
         withQuery("/auth/error", { redirectTo, subscribe, subscribeToAds }),
@@ -89,14 +46,6 @@ export async function GET(request: NextRequest) {
         env.NEXT_PUBLIC_SITE_URL,
       ),
     );
-  }
-
-  if (
-    redirectTo?.startsWith(
-      withBase("/auth/on-magic-link", env.NEXT_PUBLIC_SITE_URL),
-    )
-  ) {
-    return NextResponse.redirect(redirectTo);
   }
 
   return NextResponse.redirect(
