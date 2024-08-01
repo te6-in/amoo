@@ -4,7 +4,7 @@ const config = {
   parserOptions: {
     project: true,
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ["@typescript-eslint", "no-relative-import-paths"],
   extends: [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended-type-checked",
@@ -26,6 +26,10 @@ const config = {
           attributes: false,
         },
       },
+    ],
+    "no-relative-import-paths/no-relative-import-paths": [
+      "error",
+      { prefix: "@" },
     ],
   },
 };
