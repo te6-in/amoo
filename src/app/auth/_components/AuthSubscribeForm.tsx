@@ -3,10 +3,9 @@
 import { useForm } from "react-hook-form";
 
 import { AuthForm } from "@/app/auth/_components/AuthForm";
-import {
-  SubscribeForm,
-  type SubscribeFormValues,
-} from "@/app/auth/_components/SubscribeForm";
+import { SubscribeForm } from "@/app/auth/_components/SubscribeForm";
+
+import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
 
 interface AuthSubscribeFormProps {
   defaultValues?: SubscribeFormValues;

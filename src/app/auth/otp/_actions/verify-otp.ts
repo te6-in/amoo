@@ -5,11 +5,11 @@ import { withQuery } from "ufo";
 import { createServerClient } from "@/libs/supabase/server";
 import { prisma } from "@/server/db";
 
-import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
-import type { OtpFormValues } from "@/app/auth/otp/_components/OtpForm";
-
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+
+import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
+import type { OtpFormValues } from "@/app/auth/otp/_components/OtpForm";
 
 interface VerifyOtpRequest {
   formData: OtpFormValues;

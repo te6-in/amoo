@@ -2,12 +2,13 @@ import { withQuery } from "ufo";
 
 import { TRUE_STRING } from "@/libs/constants";
 import { createBrowserClient } from "@/libs/supabase/browser";
-import type { NextAppPage } from "@/types/next";
 
-import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
 import { OtpForm } from "@/app/auth/otp/_components/OtpForm";
 
 import { redirect } from "next/navigation";
+
+import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
+import type { NextAppPage } from "@/types/next";
 
 type OtpPageProps = NextAppPage<
   "email" | "redirectTo" | keyof SubscribeFormValues

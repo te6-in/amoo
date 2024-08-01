@@ -1,7 +1,8 @@
 import { te6TailwindPreset } from "@te6/ui";
-import { type Config } from "tailwindcss";
 import { amber, blue, neutral } from "tailwindcss/colors";
 import { fontFamily } from "tailwindcss/defaultTheme";
+
+import type { Config } from "tailwindcss";
 
 export default {
   content: ["./src/**/*.tsx", "./node_modules/@te6/ui/dist/index.js"],

@@ -1,11 +1,12 @@
 import { TRUE_STRING } from "@/libs/constants";
 import { createServerClient } from "@/libs/supabase/server";
-import type { NextAppPage } from "@/types/next";
 
 import { AuthSubscribeForm } from "@/app/auth/_components/AuthSubscribeForm";
-import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
 
 import { redirect } from "next/navigation";
+
+import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
+import type { NextAppPage } from "@/types/next";
 
 type ErrorPageProps = NextAppPage<"redirectTo" | keyof SubscribeFormValues>;
 

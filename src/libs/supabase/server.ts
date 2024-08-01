@@ -1,11 +1,10 @@
-import {
-  type CookieOptions,
-  createServerClient as createServerSupabaseClient,
-} from "@supabase/ssr";
+import { createServerClient as createServerSupabaseClient } from "@supabase/ssr";
 
 import { env } from "@/env";
 
 import { cookies } from "next/headers";
+
+import type { CookieOptions } from "@supabase/ssr";
 
 export function createServerClient() {
   const cookieStore = cookies();

@@ -5,10 +5,10 @@ import { withQuery } from "ufo";
 import { createServerClient } from "@/libs/supabase/server";
 import { prisma } from "@/server/db";
 
-import type { UsernameFormValues } from "@/app/auth/username/_components/UsernameForm";
-
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+
+import type { UsernameFormValues } from "@/app/auth/username/_components/UsernameForm";
 
 interface SetUsernameRequest {
   formData: UsernameFormValues;

@@ -1,5 +1,3 @@
-import type { User } from "@supabase/supabase-js";
-
 import { getReadableRole } from "@/libs/ui";
 import { prisma } from "@/server/db";
 
@@ -10,6 +8,8 @@ import { SubscribeButton } from "@/app/dashboard/_components/SubscribeButton";
 import { UserIcon } from "lucide-react";
 
 import Image from "next/image";
+
+import type { User } from "@supabase/supabase-js";
 
 interface ProfileProps {
   user: User;

@@ -1,18 +1,18 @@
 "use client";
 
-import type { UseFormGetValues } from "react-hook-form";
 import { withBase, withQuery } from "ufo";
 
 import { env } from "@/env";
 import { createBrowserClient } from "@/libs/supabase/browser";
-
-import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
 
 import { Button } from "@/components/Button";
 
 import { Github } from "lucide-react";
 
 import { useState } from "react";
+
+import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
+import type { UseFormGetValues } from "react-hook-form";
 
 interface GitHubAuthButtonProps {
   redirectTo?: string;

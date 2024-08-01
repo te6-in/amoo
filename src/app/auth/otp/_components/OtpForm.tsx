@@ -4,14 +4,14 @@ import { useForm } from "react-hook-form";
 
 import { verifyOtp } from "@/app/auth/otp/_actions/verify-otp";
 
-import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
-
 import { Button } from "@/components/Button";
 import { TextInput } from "@/components/TextInput";
 
 import { Check } from "lucide-react";
 
 import { useState } from "react";
+
+import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
 
 interface OtpFormProps {
   email: string;

@@ -6,7 +6,9 @@ import { Button } from "@/components/Button";
 
 import { MailCheck, MailPlus } from "lucide-react";
 
-import { type ReactElement, useState } from "react";
+import { useState } from "react";
+
+import type { ReactElement } from "react";
 
 interface SubscribeButtonProps<T> {
   elementToShowOnSuccess?: ReactElement<T>;

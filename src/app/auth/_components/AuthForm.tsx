@@ -1,10 +1,10 @@
-import type { UseFormGetValues } from "react-hook-form";
-
-import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
 import { EmailAuthForm } from "@/app/auth/_components/methods/EmailAuthForm";
 import { GitHubAuthButton } from "@/app/auth/_components/methods/GitHubAuthButton";
 
 import { DividerWithLabel } from "@/components/DividerWithLabel";
+
+import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
+import type { UseFormGetValues } from "react-hook-form";
 
 interface AuthFormProps {
   redirectTo?: string;

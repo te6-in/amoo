@@ -1,8 +1,7 @@
 "use client";
 
-import { type UseFormGetValues, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
-import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
 import { emailAuth } from "@/app/auth/_components/methods/_actions/email-auth";
 
 import { Button } from "@/components/Button";
@@ -11,6 +10,9 @@ import { TextInput } from "@/components/TextInput";
 import { Mail } from "lucide-react";
 
 import { useState } from "react";
+
+import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
+import type { UseFormGetValues } from "react-hook-form";
 
 interface EmailAuthFormProps {
   redirectTo?: string;

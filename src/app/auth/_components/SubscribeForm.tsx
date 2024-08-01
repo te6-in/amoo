@@ -1,6 +1,6 @@
-import type { UseFormRegister } from "react-hook-form";
-
 import { Checkbox } from "@/components/Checkbox";
+
+import type { UseFormRegister } from "react-hook-form";
 
 export interface SubscribeFormValues {
   subscribe: boolean;

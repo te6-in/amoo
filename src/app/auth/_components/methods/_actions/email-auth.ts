@@ -5,11 +5,11 @@ import { withBase, withQuery } from "ufo";
 import { env } from "@/env";
 import { createServerClient } from "@/libs/supabase/server";
 
-import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
-import type { EmailAuthFormValues } from "@/app/auth/_components/methods/EmailAuthForm";
-
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+
+import type { EmailAuthFormValues } from "@/app/auth/_components/methods/EmailAuthForm";
+import type { SubscribeFormValues } from "@/app/auth/_components/SubscribeForm";
 
 interface EmailAuthRequest {
   formData: EmailAuthFormValues;

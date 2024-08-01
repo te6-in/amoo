@@ -2,11 +2,12 @@ import { withQuery } from "ufo";
 
 import { createServerClient } from "@/libs/supabase/server";
 import { prisma } from "@/server/db";
-import type { NextAppPage } from "@/types/next";
 
 import { UsernameForm } from "@/app/auth/username/_components/UsernameForm";
 
 import { redirect } from "next/navigation";
+
+import type { NextAppPage } from "@/types/next";
 
 type UsernamePageProps = NextAppPage<"redirectTo">;
 

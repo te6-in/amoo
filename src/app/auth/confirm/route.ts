@@ -1,4 +1,3 @@
-import type { EmailOtpType } from "@supabase/supabase-js";
 import { withBase, withQuery } from "ufo";
 
 import { env } from "@/env";
@@ -6,7 +5,10 @@ import { TRUE_STRING } from "@/libs/constants";
 import { createServerClient } from "@/libs/supabase/server";
 import { prisma } from "@/server/db";
 
-import { type NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+
+import type { EmailOtpType } from "@supabase/supabase-js";
+import type { NextRequest } from "next/server";
 
 // handles magic link and oauth login
 export async function GET(request: NextRequest) {
