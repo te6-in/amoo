@@ -75,6 +75,9 @@ importers:
       eslint-plugin-no-relative-import-paths:
         specifier: ^1.5.5
         version: 1.5.5
+      husky:
+        specifier: ^9.1.4
+        version: 9.1.4
       knip:
         specifier: ^5.27.0
         version: 5.27.0(@types/node@20.12.7)(typescript@5.4.5)
@@ -1958,6 +1961,11 @@ packages:
   http-errors@1.8.1:
     resolution: {integrity: sha512-Kpk9Sm7NmI+RHhnj6OIWDI1d6fIoFAtFt9RLaTMRlg/8w49juAStsrBgp0Dp4OdxdVbRIeKhtCUvoi/RuAhO4g==}
     engines: {node: '>= 0.6'}
+
+  husky@9.1.4:
+    resolution: {integrity: sha512-bho94YyReb4JV7LYWRWxZ/xr6TtOTt8cMfmQ39MQYJ7f/YE268s3GdghGwi+y4zAeqewE5zYLvuhV0M0ijsDEA==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   ignore@5.3.1:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
@@ -5683,6 +5691,8 @@ snapshots:
       setprototypeof: 1.2.0
       statuses: 1.5.0
       toidentifier: 1.0.1
+
+  husky@9.1.4: {}
 
   ignore@5.3.1: {}
 
